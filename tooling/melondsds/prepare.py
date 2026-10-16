@@ -50,6 +50,7 @@ for name, (url, revision) in pins.items():
         overrides.append(f'set({name.upper().replace("-", "_")}_REPOSITORY_TAG "{revision}" CACHE STRING "" FORCE)')
 
 for patch, target in [('native-core.patch', WORK/'source'),
+                      ('touchpad-stylus.patch', WORK/'source'),
                       ('native-jit.patch', WORK/'deps/melonds-src')]:
     subprocess.run(['patch', '--batch', '--fuzz=0', '-p1', '-d', str(target),
                     '-i', str(PORT/patch)], check=True)

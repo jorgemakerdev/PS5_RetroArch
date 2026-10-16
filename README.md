@@ -362,6 +362,11 @@ mode to use the DualSense mute button without assigning another game button.
 The core's screen-layout and microphone indicators can be hidden independently
 under **On-Screen Display & Notifications**.
 
+The optional melonDS DS port also accepts the DualSense touchpad as a relative
+stylus in Joystick or Auto touch mode. Slide to position the cursor, press to
+touch, and hold the press while sliding to drag. L2 remains available as Select;
+the touchpad click is reserved for the stylus while this core is running.
+
 For an already configured checkout:
 
 ```bash

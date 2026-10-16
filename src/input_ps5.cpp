@@ -252,7 +252,8 @@ bool stylus_enabled() noexcept
     const auto *runloop = runloop_state_get_ptr();
     const char *name = runloop->system.info.library_name;
     return (runloop->flags & RUNLOOP_FLAG_CORE_RUNNING) && name &&
-           (!std::strcmp(name, "DeSmuME") || !std::strcmp(name, "Azahar"));
+           (!std::strcmp(name, "DeSmuME") || !std::strcmp(name, "Azahar") ||
+            !std::strcmp(name, "melonDS DS"));
 }
 
 struct PadState
