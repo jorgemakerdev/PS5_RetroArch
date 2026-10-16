@@ -348,6 +348,10 @@ pins RetroArch 1.22.2, fetches core sources/metadata with checked hashes, builds
 frontend and thirty-three cores, and stages the native title in `dist/PPSA99169/`.
 The initial dependency/source fetch requires network access.
 
+For real microphone input, enable RetroArch's microphone and select the `ps5`
+microphone driver. Capture stays in memory; the driver does not record files
+or send audio over the network.
+
 For an already configured checkout:
 
 ```bash

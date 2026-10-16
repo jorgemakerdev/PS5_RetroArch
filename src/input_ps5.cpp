@@ -1560,6 +1560,15 @@ extern "C" input_driver_t input_ps5 = {
     nullptr, /* keypress_vibrate */
 };
 
+// Microphone capture follows the first controller's user and shares this
+// driver's UserService lifetime rather than initializing another owner.
+extern "C" int ps5_input_user_id(unsigned port)
+{
+    if (!joypad_ready)
+        joypad_init(nullptr);
+    return port < max_pads && pads[port] != nullptr ? pads[port]->user_id : -1;
+}
+
 // Defaults clear RetroArch's auto-binds without recreating the pad driver.
 // Reannounce once on the next poll, after all default settings have been applied.
 extern "C" void ps5_input_reset_autoconfig() noexcept
